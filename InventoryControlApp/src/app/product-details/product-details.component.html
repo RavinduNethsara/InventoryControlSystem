@@ -1,0 +1,38 @@
+<div class="card py-3 bg-light">
+    <h1 class="display-4 text-center">Inventory Control System</h1>
+</div>
+<br>
+
+<div class="row">
+    <div class="col-md-6">
+        <app-product-detail-form></app-product-detail-form>
+    </div>
+    <div class="col-md-6">
+        <table class="table table-bordered">
+            <thead class="thread-light">
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Category</th>
+                    <th>Product Description</th>
+                    <th>Product Price</th>
+                    <th>Product Quantity</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pd of service.list">
+                    <td (click)="populateForm(pd)">{{pd.productName}}</td>
+                    <td (click)="populateForm(pd)">{{pd.productCategory}}</td>
+                    <td (click)="populateForm(pd)">{{pd.productDescription}}</td>
+                    <td (click)="populateForm(pd)">{{pd.productPrice}}</td>
+                    <td (click)="populateForm(pd)">{{pd.productQuantity}}</td>
+                    <td>
+                        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.productID)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
